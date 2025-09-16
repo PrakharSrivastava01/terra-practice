@@ -27,15 +27,6 @@ ansible-master → Ansible installed
 
 ansible-slave-1, ansible-slave-2 → Base setup (tools only)
 
-📂 Project Structure
-.
-├── main.tf                # Main Terraform configuration
-├── variables.tf           # Input variables (AMI ID, instance types, etc.)
-├── install_jenkins.sh     # Installs Jenkins + Java
-├── install_ansible.sh     # Installs Ansible
-├── base_setup.sh          # Installs common tools (git, curl, unzip)
-└── README.md              # Documentation
-
 ⚙️ How It Works
 
 Terraform uses for_each to create multiple EC2 instances from a map.
@@ -43,3 +34,20 @@ Terraform uses for_each to create multiple EC2 instances from a map.
 Each instance gets a different user_data script depending on its role (jenkins-master, ansible-master, or slaves).
 
 Scripts are executed on first boot using cloud-init.
+
+ 📂 Project Structure
+ 
+  ├── main.tf                # Main Terraform configuration
+  ├── variables.tf           # Input variables (AMI ID, instance types, etc.)  
+  ├── install_jenkins.sh     # Installs Jenkins + Java
+  ├── install_ansible.sh     # Installs Ansible
+  ├── base_setup.sh          # Installs common tools (git, curl, unzip)
+  └── README.md              # Documentation
+
+
+
+
+  
+
+
+
